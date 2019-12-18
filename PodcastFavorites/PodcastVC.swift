@@ -42,12 +42,15 @@ class PodcastVC: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let podcastDVC = segue.destination as? PodcastDVC,
+            let indexPath = tableView.indexPathForSelectedRow else {
+                fatalError("could not dequeue to PodcastDVC")
+        }
+        let podcast = podcasts[indexPath.row]
+        podcastDVC.podcastDetail = podcast
+    }
     
-    
-    
-    
-    
-
 }
 
 extension PodcastVC: UITableViewDataSource {
