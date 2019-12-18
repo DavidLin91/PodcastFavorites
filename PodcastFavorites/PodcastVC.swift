@@ -28,6 +28,7 @@ class PodcastVC: UIViewController {
         tableView.dataSource = self
         podcastSearchBar.delegate = self
         searchPodcast(search: searchQuery)
+        tableView.delegate = self
     }
 
     func searchPodcast(search: String) {
@@ -40,6 +41,10 @@ class PodcastVC: UIViewController {
             }
         }
     }
+    
+    
+    
+    
     
     
 
@@ -67,5 +72,11 @@ extension PodcastVC: UISearchBarDelegate {
             return
         }
         searchPodcast(search: searchText)
+    }
+}
+
+extension PodcastVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        150
     }
 }
