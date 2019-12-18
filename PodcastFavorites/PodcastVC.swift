@@ -29,6 +29,7 @@ class PodcastVC: UIViewController {
         podcastSearchBar.delegate = self
         searchPodcast(search: searchQuery)
         tableView.delegate = self
+        title = "Podcast"
     }
 
     func searchPodcast(search: String) {

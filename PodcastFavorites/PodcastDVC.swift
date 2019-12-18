@@ -42,10 +42,10 @@ class PodcastDVC: UIViewController {
     }
     
     @IBAction func favoriteButtonClicked(_ sender: UIButton) {
-        guard let trackName = podcastDetail else {
+        guard let podcast = podcastDetail else {
             return
         }
-        let favorite = Podcasts(trackId: trackName.trackId, collectionId: trackName.collectionId, trackName: trackName.trackName, artistName: trackName.artistName, collectionName: trackName.collectionName, artworkUrl100: trackName.artworkUrl100, artworkUrl600: trackName.artworkUrl600, primaryGenreName: trackName.primaryGenreName, favoritedBy: "David")
+        let favorite = Podcasts(trackId: podcast.trackId, collectionId: podcast.collectionId, trackName: podcast.trackName, artistName: podcast.artistName, collectionName: podcast.collectionName, artworkUrl100: podcast.artworkUrl100, artworkUrl600: podcast.artworkUrl600, primaryGenreName: podcast.primaryGenreName, favoritedBy: "David")
         
         PodcastAPIClient.postFavorites(favorite: favorite) { (result) in
             DispatchQueue.main.async {
@@ -58,7 +58,7 @@ class PodcastDVC: UIViewController {
                 }
             case .success:
                 DispatchQueue.main.async {
-                    self.showAlert(title: "Success", message: "\(trackName.collectionName) was liked") { action in
+                    self.showAlert(title: "Success", message: "\(podcast.collectionName) was liked") { action in
                         self.dismiss(animated: true)
                     }
                 }

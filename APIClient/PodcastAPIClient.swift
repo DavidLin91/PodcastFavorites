@@ -83,7 +83,7 @@ struct PodcastAPIClient {
     
     
     // GET request: to get all answers
-    static func fetchAnswers(completion: @escaping(Result<[Podcasts],AppError>) -> ()) {
+    static func fetchFavorites(completion: @escaping(Result<[Podcasts],AppError>) -> ()) {
         let answersURLString = "https://5c2e2a592fffe80014bd6904.mockapi.io/api/v1/favorites"
         guard let url = URL(string: answersURLString) else {
             completion(.failure(.badURL(answersURLString)))
