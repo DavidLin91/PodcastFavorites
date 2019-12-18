@@ -11,9 +11,33 @@ import UIKit
 class FavoritePodcastVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
+    var favorites = [Podcasts]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.dataSource = self
     }
     
     
+}
+
+extension FavoritePodcastVC: UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        favorites.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "favoriteCell", for: indexPath) as? FavoritePodcastCell else {
+            fatalError("cannot dequeue FavoritePodcastCell")
+        }
+        let favorite = favorites[indexPath.row]
+        cell.configureCell(podcast: favorite)
+        return cell
+    }
 }

@@ -47,9 +47,26 @@ class PodcastDVC: UIViewController {
         }
         let favorite = Podcasts(trackId: trackName.trackId, collectionId: trackName.collectionId, trackName: trackName.trackName, artistName: trackName.artistName, collectionName: trackName.collectionName, artworkUrl100: trackName.artworkUrl100, artworkUrl600: trackName.artworkUrl600, primaryGenreName: trackName.primaryGenreName, favoritedBy: "David")
         
-        
+        PodcastAPIClient.postFavorites(favorite: favorite) { (result) in
+            DispatchQueue.main.async {
+                sender.isEnabled = true
+            }
+            switch result {
+            case .failure(let appError):
+                DispatchQueue.main.async {
+                self.showAlert(title: "Error posting question", message: "\(appError)")
+                }
+            case .success:
+                DispatchQueue.main.async {
+                    self.showAlert(title: "Success", message: "\(trackName.collectionName) was liked") { action in
+                        self.dismiss(animated: true)
+                    }
+                }
+            }
+        }
+    }
     
     
     
-}
+    
 }

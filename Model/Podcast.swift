@@ -12,7 +12,7 @@ struct AllPodcasts: Decodable {
     let results: [Podcasts]
 }
 
-struct Podcasts: Decodable {
+struct Podcasts: Codable {
     let trackId: Int
     let collectionId: Int?
     let trackName: String?

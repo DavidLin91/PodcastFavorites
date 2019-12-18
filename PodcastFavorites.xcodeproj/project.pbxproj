@@ -23,6 +23,7 @@
 		6361ACF323A94E5600BA826B /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6361ACF223A94E5600BA826B /* NetworkHelper.swift */; };
 		6361ACF523A94E6300BA826B /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6361ACF423A94E6300BA826B /* AppError.swift */; };
 		63647D8E23AA8061002B5000 /* FavoritePodcastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63647D8D23AA8061002B5000 /* FavoritePodcastCell.swift */; };
+		63647D9223AA9BBD002B5000 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63647D9123AA9BBD002B5000 /* UIViewController+Alerts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		6361ACF223A94E5600BA826B /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		6361ACF423A94E6300BA826B /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		63647D8D23AA8061002B5000 /* FavoritePodcastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePodcastCell.swift; sourceTree = "<group>"; };
+		63647D9123AA9BBD002B5000 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				63178D4C23A9B6A20001DA8F /* UIImageView+Extension.swift */,
+				63647D9123AA9BBD002B5000 /* UIViewController+Alerts.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				63178D4423A95EF40001DA8F /* PodcastAPIClient.swift in Sources */,
 				63178D4D23A9B6A20001DA8F /* UIImageView+Extension.swift in Sources */,
 				6361ACCA23A9402700BA826B /* SceneDelegate.swift in Sources */,
+				63647D9223AA9BBD002B5000 /* UIViewController+Alerts.swift in Sources */,
 				6361ACEE23A9435A00BA826B /* PodcastDVC.swift in Sources */,
 				6361ACEC23A9432600BA826B /* FavoritePodcastVC.swift in Sources */,
 			);
