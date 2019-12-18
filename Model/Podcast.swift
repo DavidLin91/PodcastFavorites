@@ -14,11 +14,13 @@ struct AllPodcasts: Decodable {
 
 struct Podcasts: Decodable {
     let trackId: Int
-    let collectionId: Int
-    let trackName: String
+    let collectionId: Int?
+    let trackName: String?
     let artistName: String
     let collectionName: String
-    let artworkUrl100: String
+    let artworkUrl100: String?
     let artworkUrl600: String
-    let primaryGenreName: String
+    let primaryGenreName: String?
+    let favoritedBy: String?
+    
 }

@@ -19,7 +19,7 @@ class PodcastCell: UITableViewCell {
         podcastName.text = podcast.collectionName
         podcastGenre.text = podcast.primaryGenreName
         
-        trackThumbnailImage.getImage(with: podcast.artworkUrl100) { (result) in
+        trackThumbnailImage.getImage(with: podcast.artworkUrl100 ?? "") { (result) in
             switch result {
             case .failure:
                 DispatchQueue.main.async {
